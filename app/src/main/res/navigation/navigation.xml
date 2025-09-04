@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/imageSlider"
+        android:name="com.zaibtech.multityperecycleview.ImageSlider"
+        android:label="fragment_image_slider"
+        tools:layout="@layout/fragment_image_slider" >
+        <action
+            android:id="@+id/action_imageSlider_to_multitypeFragment"
+            app:destination="@id/multitypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.zaibtech.multityperecycleview.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_imageSlider"
+            app:destination="@id/imageSlider" />
+        <action
+            android:id="@+id/action_mainFragment_to_multitypeFragment"
+            app:destination="@id/multitypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/multitypeFragment"
+        android:name="com.zaibtech.multityperecycleview.MultitypeFragment"
+        android:label="fragment_multitype"
+        tools:layout="@layout/fragment_multitype" >
+        <action
+            android:id="@+id/action_multitypeFragment_to_imageSlider"
+            app:destination="@id/imageSlider" />
+    </fragment>
+</navigation>
